@@ -22,7 +22,7 @@ jobs:
       uses: casoftsolutions/usando-workflow-call/.github/workflows/cd.yaml@a14e30429b3a4c33fadbadca60f76ca03416f8c5
       with:
         ambiente: Meu teste #  esse valor sera usado no arquivo cd.yaml
-        versao: 1.0.0
+        versao: 520
       secrets:
         token_acesso: ${{ secrets.MEU_SEGREDO }}  
 
