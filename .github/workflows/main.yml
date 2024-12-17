@@ -19,7 +19,7 @@ jobs:
               run: echo "Imagem Docker construída com sucesso!"
     CD:
       needs: [CI]
-      uses: casoftsolutions/usando-workflow-call/.github/workflows/cd.yaml@00d167492dd506610f8509d10712ee83bc281e7c
+      uses: casoftsolutions/usando-workflow-call/.github/workflows/cd.yaml@main
       with:
-        ambiente: Meu teste
+        ambiente: Meu teste #  esse valor sera usado no arquivo cd.yaml
 

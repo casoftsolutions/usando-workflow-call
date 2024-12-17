@@ -6,6 +6,10 @@ on:
                 required: true
                 type: string
                 description: 'Manifesto deploy Kubernetes'
+            versao:
+                    required: true
+                    type: number
+                    description: 'Versao'
 
 jobs:
     deploy-k8s:
@@ -14,4 +18,4 @@ jobs:
         - name: Obtendo o código
           uses: actions/checkout@v4.1.5
         - name: Configuração de contexto do Kubernetes
-          run: echo "${{ inputs.ambiente}} Configuração de contexto do Kubernetes realizada com sucesso!"
+          run: echo "${{ inputs.ambiente}} v${{ inputs.versao}} Configuração de contexto do Kubernetes realizada com sucesso!"
