@@ -6,10 +6,10 @@ on:
                 required: true
                 type: string
                 description: 'Manifesto deploy Kubernetes'
-            versao:
-                    required: true
-                    type: number
-                    description: 'Versao'
+            # versao:
+            #         required: true
+            #         type: number
+            #         description: 'Versao'
 
 jobs:
     deploy-k8s:
