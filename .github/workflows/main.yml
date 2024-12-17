@@ -18,6 +18,6 @@ jobs:
                 password: ${{ secrets.DOCKERHUB_TOKEN }}
             - name: Build da Imagem Docker
               run: echo "Imagem Docker construída com sucesso!"
-    # CD:
-    #   needs: [CI]
-    #   uses: casoftsolutions/usando-workflow-call/.github/workflows/cd.yaml@main
+    CD:
+      needs: [CI]
+      uses: casoftsolutions/usando-workflow-call/.github/workflows/cd.yaml@main
