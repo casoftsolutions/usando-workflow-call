@@ -1,1 +1,23 @@
+name: Demo CI/CD Workflow Call
+on:
+    push:
+        branches:
+            - main 
+    workflow_dispatch:        
 
+jobs: 
+    CI:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4.1.5
+            - name: Autenticação no Docker Hub
+              uses: docker/login-action@v3.1.0
+              with:
+                username: ${{ secrets.DOCKERHUB_USERNAME }}
+                password: ${{ secrets.DOCKERHUB_TOKEN }}
+            - name: Build da Imagem Docker
+              run: echo "Imagem Docker construída com sucesso!"
+    # CD:
+    #   needs: [CI]
+    #   uses: casoftsolutions/usando-workflow-call/.github/workflows/cd.yaml@main
