@@ -3,7 +3,28 @@ on:
     push:
         branches:
             - main 
-    workflow_dispatch:        
+    workflow_dispatch:     
+            inputs:
+                valor:
+                    type: string
+                    description: 'texto qualquer'
+                    required: true
+                    default: 'Um valor qualquer'
+                carro:
+                    type: string
+                    description: 'Carro'
+                    required: true
+                    default: 'Fusca'
+                pais:
+                    type: string
+                    description: 'Local'
+                    required: true
+                    default: 'Brasil'
+                cidade:
+                    type: string
+                    description: 'Cidade'
+                    required: false
+                    default: 'São Paulo'
 
 jobs: 
     CI:
@@ -24,4 +45,9 @@ jobs:
 
     CD-Feature:
       needs: [CI]
-      uses: casoftsolutions/usando-workflow-call/.github/workflows/cd.yaml@feature
+      uses: casoftsolutions/usando-workflow-call/.github/workflows/feature.yaml@feature
+    #   with: 
+    #     valor: ${{ inputs.valor }}
+    #     carro: ${{ inputs.carro }}
+    #     pais: ${{ inputs.pais }}
+    #     cidade: ${{ inputs.cidade }}
