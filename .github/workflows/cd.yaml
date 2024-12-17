@@ -3,8 +3,9 @@ on:
     workflow_call:
         inputs:
             ambiente:
-              type: string
-              required: true
+                required: true
+                type: string
+                description: 'Manifesto deploy Kubernetes'
 
 jobs:
     deploy-k8s:
