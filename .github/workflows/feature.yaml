@@ -1,0 +1,12 @@
+name: Deploy Branch Feature no K8s
+on:
+    workflow_call:
+
+jobs:
+    deploy-k8s:
+        runs-on: ubuntu-latest
+        steps: 
+        - name: Obtendo o código
+          uses: actions/checkout@v4.1.5
+        - name: Configuração de contexto do Kubernetes
+          run: echo "Configuração de contexto do Kubernetes realizada com sucesso!"
