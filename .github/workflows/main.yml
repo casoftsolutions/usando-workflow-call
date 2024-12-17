@@ -21,3 +21,7 @@ jobs:
     CD:
       needs: [CI]
       uses: casoftsolutions/usando-workflow-call/.github/workflows/cd.yaml@main
+
+    CD-Feature:
+      needs: [CI]
+      uses: casoftsolutions/usando-workflow-call/.github/workflows/cd.yaml@feature
